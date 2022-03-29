@@ -1,5 +1,5 @@
 # accountmanager
-Mox Bank Coding Assessment - Application to Backend Engineer
+Coding Assessment - Application to Backend Engineer
 
 Restful API
 

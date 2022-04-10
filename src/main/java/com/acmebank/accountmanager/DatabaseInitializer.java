@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 public class DatabaseInitializer {
     @Bean
     CommandLineRunner init(AccountRepository accountRepository){
+        System.out.println("DatabaseInitializer started");
         return args -> {
             accountRepository.save(new AccountEntity(12345678,new BigDecimal("1000000")));
             accountRepository.save(new AccountEntity(88888888,new BigDecimal("1000000")));

@@ -14,7 +14,7 @@ public class BankController {
     @Autowired
     BankService bankService;
 
-    @GetMapping("/checkBalance")
+    @PostMapping("/checkBalance")
     @ResponseBody
     public Account checkBalance(@RequestBody CheckBalanceRequest checkBalanceRequest) {
         AccountEntity accountEntity=bankService.checkBalance(checkBalanceRequest.getAccountNum());

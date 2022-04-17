@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mysqlserver:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_USER=bankuser
+      - MYSQL_PASSWORD=123
+      - MYSQL_DATABASE=bank
+    volumes:
+      - /Users/jim/mysql_volume/mysql_data:/var/lib/mysql
+      - /Users/jim/mysql_volume/mysql_config:/etc/mysql/conf.d

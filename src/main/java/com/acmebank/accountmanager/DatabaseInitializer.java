@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Component
+//@Component
 public class DatabaseInitializer {
-    @Bean
+    //@Bean
     CommandLineRunner init(AccountRepository accountRepository){
         System.out.println("DatabaseInitializer started");
         return args -> {

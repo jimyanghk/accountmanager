@@ -2,8 +2,11 @@ version: '3.8'
 services:
   mysqlserver:
     image: mysql:5.7
+    container_name: mysqlserver
     ports:
       - 3306:3306
+    networks:
+      - mynetwork
     environment:
       - MYSQL_ROOT_PASSWORD=123
       - MYSQL_ALLOW_EMPTY_PASSWORD=no
@@ -13,3 +16,14 @@ services:
     volumes:
       - /Users/jim/mysql_volume/mysql_data:/var/lib/mysql
       - /Users/jim/mysql_volume/mysql_config:/etc/mysql/conf.d
+  accountManager:
+    image: account-manager-mysql
+    container_name: accountManager
+    ports:
+      - 8080:8080
+    networks:
+      - mynetwork
+    depends_on:
+      - mysqlserver
+networks:
+  mynetwork:
